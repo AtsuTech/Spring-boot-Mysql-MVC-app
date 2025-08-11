@@ -1,0 +1,18 @@
+# このファイルで作った設定で、docekrの環境を構築してくれるみたい
+# 先にdockerでコンテナ作ってその環境にアクセスする情報を書いていたが、違うみたい
+
+
+
+services:
+  mysql:
+    #container_name: 'spring-boot-mysql'
+    container_name: 'spring-boot-access-mysql'
+    image: 'mysql:8.0'
+    #image: 'mysql'
+    environment:
+      - 'MYSQL_DATABASE=spring_db'
+      - 'MYSQL_PASSWORD=develop1023'
+      - 'MYSQL_ROOT_PASSWORD=spring0123'
+      - 'MYSQL_USER=springdev'
+    ports:
+      - '3306:3306'
